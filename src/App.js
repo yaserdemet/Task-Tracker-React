@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react'
 import Header from './components/Header';
+import List from './components/List';
 
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
     <div className='container'>
 
       <Header   />
+      <List />
      
 
 
