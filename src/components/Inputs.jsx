@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
-const Inputs = ({data1, setData1}) => {
-    console.log(data1);
+const Inputs = ({setData1 , data1}) => {
+   
    
   const [data, setData] = useState({ task: "", date: "" });
 
@@ -14,6 +14,7 @@ const Inputs = ({data1, setData1}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setData1([...data1 , data]);
     
     const { task, date } = data;
     setData({task : "" , date : ""});
