@@ -1,5 +1,7 @@
 import React from "react";
+
 import { useState } from "react";
+import { FaTasks } from "react-icons/fa";
 
 const Inputs = ({setData1 , data1}) => {
    
@@ -34,8 +36,7 @@ const Inputs = ({setData1 , data1}) => {
     <form >
       <div>
         <label style={{ display: "block" }} htmlFor="Task">
-          TASK
-        </label>
+          TASK  <FaTasks /> </label>
         <input
           name="task"
           value={data.task}
@@ -51,7 +52,7 @@ const Inputs = ({setData1 , data1}) => {
         <input
         value={data.date}
           name="date"
-          type="date"
+          type="text"
           placeholder="Add Date"
           onChange={handleChange}
         />

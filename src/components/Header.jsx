@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react'
 import Inputs from './Inputs'
+import {BiHide} from 'react-icons/bi'
 
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
     <div>
         <h1>Task Traker</h1>
         <button className='btn btn-primary my-3' onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? 'Show Task Bar' :  'Hide Task Bar'  }
+          {isOpen ? 'Show Task Bar' :  <span>Hide Task Bar <BiHide/></span>}    
         </button>
       {
         !isOpen && <Inputs  data1={data1} setData1={setData1}/> 
