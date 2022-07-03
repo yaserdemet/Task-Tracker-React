@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaTasks } from "react-icons/fa";
 
 const Inputs = ({setData1 , data1}) => {
@@ -16,31 +16,39 @@ const Inputs = ({setData1 , data1}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(data.task === "" || data.date === ""){
+      alert("Please fill all the fields");
+      return false;
+  }
     setData1([...data1 , data]);
     
     const { task, date } = data;
     setData({task : "" , date : ""});
     // setData({ task: "", date: "" });
-    if(data.task === "" || data.date === ""){
-        alert("Please fill all the fields");
- 
-      return false;
-    }
+    
        
     console.log("submit");
     
    
   };
 
+  useEffect(() => {
+    console.log(data1);
+  }, [])
+  
   return (
     <form >
       <div>
         <label style={{ display: "block" }} htmlFor="Task">
           TASK  <FaTasks /> </label>
         <input
+        className="form-control"
           name="task"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
           value={data.task}
           type="text"
+          autoFocus
           placeholder="Add Task"
           onChange={handleChange}
         />
@@ -50,6 +58,9 @@ const Inputs = ({setData1 , data1}) => {
           DATE
         </label>
         <input
+          className="form-control"
+           aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
         value={data.date}
           name="date"
           type="text"
@@ -57,15 +68,15 @@ const Inputs = ({setData1 , data1}) => {
           onChange={handleChange}
         />
       </div>
-      <div>
+     
         <button
-          className="btn btn-warning mt-3"
-          
+          className="btn btn-warning my-3 "
+          type="button"
           onClick={handleSubmit}
         >
           Save Task
         </button>
-      </div>
+     
     </form>
   );
 };
