@@ -5,43 +5,27 @@ import {FiDelete} from 'react-icons/fi'
 import {BiHide} from 'react-icons/bi'
 import {BiShowAlt} from 'react-icons/bi'
 import "../App.css";
+import {ImCheckboxChecked} from 'react-icons/im'
 
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(true);
     const [data1 , setData1] = useState([]);
+    const [cevir, setCevir] = useState(false);
     // const [style, setStyle] = useState(true)
 
-    const handleDelete = (index) => {
+    const handleDelete = (id) => {
 
-      setData1(data1.filter(item => item.index !== index))
-    
-
-
-
-
-
-
-
-
-
-      // let x = e.target.closest("li").style
-      //  if(style){
-      //   x.textDecoration = "line-through"
-      //   x.display = "none" 
-      //   setStyle(false)
-      //  }
-      //  else {
-      //   x.textDecoration = "none" 
-      //   setStyle(true)
-      //  }
+      setData1(data1.filter(item => item.id !== id));
+     console.log(id)
+     console.log(data1);
     }
    
+    
+    // useEffect(() => {
+    //   console.log(data1);
 
-    useEffect(() => {
-      console.log(data1);
-
-    }, [ data1 ]);
+    // }, [ data1 ]);
 
   return (
     <div>
@@ -57,14 +41,36 @@ const Header = () => {
         isOpen && <p>No task yet</p>
       }
       <div>
-        <ul>
-          { data1.map((item,index) => {
-            return <li key={index}> {item.index}  {item.task} {item.date}  
-             <button    onClick={() => handleDelete( index )}  
+        <div>
+          
+          
+          <div>
+          { 
+          data1.map((item) => {
+          
+            return <div key={item.id} > 
+              <li onClick={() => setCevir(!cevir)}  
+            className={cevir ? "slide" : "nonSlide"  }
+
+                >
+            
+               <button style={{border : "none"}}> <ImCheckboxChecked  color = {"green"} /> </button>
+              {item.task} {item.date} {item.id}
+         
+
+             <button    onClick={() => handleDelete( item.id )}  
              
-             type="button" style={{border : "none"}}><FiDelete size={"1.3rem"} /></button> </li>
-          })}
-        </ul>
+             type="button" style={{border : "none"}}><FiDelete size={"1.3rem"} /></button></li>
+              </div>
+             
+              
+          })
+        }
+           </div>
+      
+         
+       
+         </div>
       </div>
 
 

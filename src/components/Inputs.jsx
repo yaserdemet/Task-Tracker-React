@@ -4,15 +4,19 @@ import { useState, useEffect } from "react";
 import { FaTasks } from "react-icons/fa";
 
 const Inputs = ({setData1 , data1}) => {
+  
    
-   
-  const [data, setData] = useState({ task: "", date: "" });
+  const [data, setData] = useState({ task: "", date: "" , id : Math.random() * 10000});
 
   const handleChange = (e) => {
     // console.log(e.target.value);
 
     setData({ ...data, [e.target.name]: e.target.value });
   };
+
+   
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,13 +26,8 @@ const Inputs = ({setData1 , data1}) => {
   }
     setData1([...data1 , data]);
     
-    const { task, date } = data;
-    setData({task : "" , date : ""});
-    // setData({ task: "", date: "" });
-    
-       
-    console.log("submit");
-    
+    const { task, date , id} = data;
+    setData({task : "" , date : "" , id : Math.random() * 10000});
    
   };
 

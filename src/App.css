@@ -46,6 +46,17 @@
   border: 2px solid black;
 }
 
-.abc {
-  text-decoration: overline;
-}
+.slide {
+    transform: translateX(20%);
+    transition: all 0.5s ease-in-out;
+    /* text-decoration: line-through; */
+  }
+
+
+  .nonSlide {
+    transform: translateX(0%);
+    transition: all 0.5s ease-in-out;
+  }
+  li {
+    list-style-type: none;
+  }
