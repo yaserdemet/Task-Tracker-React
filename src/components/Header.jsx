@@ -28,7 +28,7 @@ const Header = () => {
     // }, [ data1 ]);
 
   return (
-    <div>
+    <div className='head'>
         <h1>Task Traker</h1>
         {/*  ?buton className changing */}
         <button className={`btn ${isOpen ? "btn-dark" : "btn-primary"}` } onClick={() => setIsOpen(!isOpen)} >
@@ -50,17 +50,18 @@ const Header = () => {
           
             return <div key={item.id} > 
               <li onClick={() => setCevir(!cevir)}  
-            className={cevir ? "slide" : "nonSlide"  }
+            className={(cevir ? "slide" : "nonSlide")} 
+       
 
                 >
             
                <button style={{border : "none"}}> <ImCheckboxChecked  color = {"green"} /> </button>
-              {item.task} {item.date} {item.id}
+              {item.task} {item.date} 
          
 
              <button    onClick={() => handleDelete( item.id )}  
              
-             type="button" style={{border : "none"}}><FiDelete size={"1.3rem"} /></button></li>
+             type="button" style={{border : "none"}}><FiDelete  /></button></li>
               </div>
              
               

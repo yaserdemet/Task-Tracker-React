@@ -2,6 +2,7 @@ import React from "react";
 
 import { useState, useEffect } from "react";
 import { FaTasks } from "react-icons/fa";
+import {BsCalendar2Date} from "react-icons/bs";
 
 const Inputs = ({setData1 , data1}) => {
   
@@ -39,9 +40,9 @@ const Inputs = ({setData1 , data1}) => {
     <form >
       <div>
         <label style={{ display: "block" }} htmlFor="Task">
-          TASK  <FaTasks /> </label>
+        <FaTasks />  TASK   </label>
         <input
-        className="form-control"
+        className="form-control "
           name="task"
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
@@ -54,16 +55,16 @@ const Inputs = ({setData1 , data1}) => {
       </div>
       <div>
         <label style={{ display: "block" }} htmlFor="Date">
-          DATE
+         <BsCalendar2Date />   DATE
         </label>
         <input
-          className="form-control"
-           aria-label="Sizing example input"
-          aria-describedby="inputGroup-sizing-default"
+        
+          className="form-control "
+          type="date"
         value={data.date}
           name="date"
-          type="text"
-          placeholder="Add Date"
+         
+          placeholder="Add Date "
           onChange={handleChange}
         />
       </div>
