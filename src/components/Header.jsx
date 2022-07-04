@@ -37,9 +37,8 @@ const Header = () => {
       {
         !isOpen && <Inputs  data1={data1} setData1={setData1}/> 
       }
-      {
-        isOpen && <p>No task yet</p>
-      }
+     
+      {data1.length == 0 && <p>No task yet</p>}
       <div>
         <div>
           
@@ -62,6 +61,7 @@ const Header = () => {
              <button    onClick={() => handleDelete( item.id )}  
              
              type="button" style={{border : "none"}}><FiDelete  /></button></li>
+          
               </div>
              
               
