@@ -31,7 +31,6 @@ const Inputs = ({setData1 , data1}) => {
     setData({task : "" , date : "" , id : Math.random() * 10000});
    
   };
-
   useEffect(() => {
     console.log(data1);
   }, [])
@@ -76,6 +75,12 @@ const Inputs = ({setData1 , data1}) => {
         >
           Save Task
         </button>
+
+        {/* <button
+          className="btn btn-danger mx-5 "
+          type="button"
+          onClick={() =>handleDelete}
+          > DELETE ALL</button> */}
      
     </form>
   );

@@ -78,16 +78,14 @@ input{
 }
 
 
-/* .slide {
-    transform: translateX(20%);
-    transition: all 0.5s ease-in-out;
+.slide {
+   text-decoration: line-through;
 }
 
-
   .nonSlide {
-    transform: translateX(0%);
-    transition: all 0.5s ease-in-out;
-  } */
+  text-decoration: none;
+  }
+  
   li {
     list-style-type: none;
     border-bottom: 1px rgb(255, 255, 255) solid;
