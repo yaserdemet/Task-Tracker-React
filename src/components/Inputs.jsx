@@ -11,19 +11,18 @@ const Inputs = ({setData1 , data1}) => {
 
   const handleChange = (e) => {
     // console.log(e.target.value);
-
+    
     setData({ ...data, [e.target.name]: e.target.value });
   };
-
-   
-
 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if(data.task === "" || data.date === ""){
-      alert("Please fill all the fields");
+
+      alert("Please fill all fields");
       return false;
+      
   }
     setData1([...data1 , data]);
     
