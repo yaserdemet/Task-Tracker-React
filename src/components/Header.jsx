@@ -42,7 +42,7 @@ const Header = () => {
       <h1>Task Traker</h1>
       {/*  ?buton className changing */}
       <button
-        className={`btn ${isOpen ? "btn-success" : "btn-primary"}`}
+        className={`btn ${isOpen ? "btn-light" : "btn-primary"}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? (
