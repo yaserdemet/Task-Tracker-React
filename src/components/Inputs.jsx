@@ -13,6 +13,8 @@ const Inputs = ({setData1 , data1}) => {
     // console.log(e.target.value);
     
     setData({ ...data, [e.target.name]: e.target.value });
+    //! input onChange olunca değerleri state te atmamız gerekir. Bunun için önce 
+    //! ilk değeri tutmak için datayı açtık daha sonra içine yeni değerleri attık.
   };
 
 
@@ -28,6 +30,8 @@ const Inputs = ({setData1 , data1}) => {
     
     const { task, date , id} = data;
     setData({task : "" , date : "" , id : Math.random() * 10000});
+    //! form submit olduğunda formu prevent default etmiştik. bu yüzden setDatanın içine tekrar
+    //! boş değerleri gönderdik.
    
   };
   useEffect(() => {
