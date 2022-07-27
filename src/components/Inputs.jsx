@@ -1,11 +1,12 @@
 import React from "react";
-
-import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import { useState, useEffect , useRef} from "react";
 import { FaTasks } from "react-icons/fa";
 import {BsCalendar2Date} from "react-icons/bs";
+import { toastWarnNotify } from "../utils/ToastContainer";
 
 const Inputs = ({setData1 , data1}) => {
-  
+    const myRef = useRef();
    
   const [data, setData] = useState({ task: "", date: "" , id : Math.random() * 10000});
 
@@ -22,7 +23,8 @@ const Inputs = ({setData1 , data1}) => {
     e.preventDefault();
     if(data.task === "" || data.date === ""){
 
-      alert("Please fill all fields");
+      toastWarnNotify("Please fill all fields");
+      
       return false;
       
   }
@@ -36,6 +38,9 @@ const Inputs = ({setData1 , data1}) => {
   };
   useEffect(() => {
     console.log(data1);
+    myRef.current.focus();
+    
+   
   }, [])
   
   return (
@@ -50,7 +55,7 @@ const Inputs = ({setData1 , data1}) => {
           aria-describedby="inputGroup-sizing-default"
           value={data.task}
           type="text"
-          autoFocus
+         ref={myRef}
           placeholder="Add Task"
           onChange={handleChange}
         />
