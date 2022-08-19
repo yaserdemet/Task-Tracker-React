@@ -9,7 +9,7 @@
 
 👉 React Props
 
-👉 React State Logic
+👉 React State and Component Logic
 
 👉 React useEffect Hooks
 
