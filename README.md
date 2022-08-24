@@ -2,7 +2,7 @@
 
 ![Animation](https://user-images.githubusercontent.com/99739515/177800147-0c1c69d5-44d9-4c7f-a560-cc3f7c7a572c.gif)
 
-📍 [Click here to see React Task Tracker](https://task-tracker-react-djmdf739g-yaserdemet.vercel.app)
+📍 [Click here to see React Task Tracker](https://task-tracker-react-pied.vercel.app)
 
 ## Available Scripts
 
