@@ -4,9 +4,10 @@ import { useState, useEffect , useRef} from "react";
 import { FaTasks } from "react-icons/fa";
 import {BsCalendar2Date} from "react-icons/bs";
 import { toastWarnNotify } from "../utils/ToastContainer";
-
+import autoAnimate from '@formkit/auto-animate'
 const Inputs = ({setData1 , data1}) => {
     const myRef = useRef();
+    const parent = useRef(null)
    
   const [data, setData] = useState({ task: "", date: "" , id : Math.random() * 10000});
 
@@ -42,9 +43,14 @@ const Inputs = ({setData1 , data1}) => {
     
    
   }, [])
+
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current)
+  }, [parent])
   
   return (
-    <form >
+    <form ref={parent}>
       <div>
         <label style={{ display: "block" }} htmlFor="Task">
         <FaTasks />  TASK   </label>

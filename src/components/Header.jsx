@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect , useRef} from "react";
 import Inputs from "./Inputs";
 import { FiDelete } from "react-icons/fi";
 import { BiHide } from "react-icons/bi";
@@ -6,10 +6,9 @@ import { BiShowAlt } from "react-icons/bi";
 import "../App.css";
 import { ImCheckboxChecked } from "react-icons/im";
 import { toastWarnNotify } from "../utils/ToastContainer";
-
-
+import autoAnimate from '@formkit/auto-animate'
 const Header = () => {
- 
+  const parent = useRef(null)
   const [isOpen, setIsOpen] = useState(true); //? componenti açıp kapatmak için kullanıldı.
   const [data1, setData1] = useState([]);     //* gelecek olan inputları tutmak için kullanıldı.
   const [cevir, setCevir] = useState(false);  //! classlar için kullanıldı.
@@ -42,8 +41,12 @@ const Header = () => {
 
   // }, [ data1 ]);
 
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current)
+  }, [parent])
+
   return (
-    <div className="head">
+    <div className="head" ref={parent}>
       <h1>Task Traker</h1>
       {/*  ?buton className changing */}
       <button
